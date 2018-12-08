@@ -1,18 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HotelListComponent } from './hotel-list/hotel-list.component';
+import { TableModule } from 'primeng/table';
+import { CalendarModule } from 'primeng/calendar';
+import { HotelService } from './hotel-service.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HotelListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TableModule,
+    HttpModule,
+    CalendarModule
   ],
-  providers: [],
+  providers: [HotelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
