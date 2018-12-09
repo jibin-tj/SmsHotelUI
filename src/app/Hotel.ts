@@ -1,8 +1,8 @@
 export interface Hotel {
     id;
     city;
-    startDate;
-    endDate;
+    startDate:Date;
+    endDate:Date;
     price;
     status;
     color;
