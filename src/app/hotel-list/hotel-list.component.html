@@ -1,7 +1,7 @@
-<p-calendar [(ngModel)]="value">
-</p-calendar>
-
-<p-table [columns]="cols" [value]="hotels" [paginator]="false" [rows]="10" (sortFunction)="customSort($event)" [customSort]="true" #dt>
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark ">
+        <a class="navbar-brand text-center center-block" href="#">{{title}}</a>
+</nav>
+<p-table [columns]="cols" [value]="hotels" [paginator]="true" [rows]="30" (sortFunction)="customSort($event)" [customSort]="true" #dt>
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns" [pSortableColumn]="col.field" [ngSwitch]="col.field">

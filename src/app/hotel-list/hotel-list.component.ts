@@ -11,6 +11,7 @@ import { HotelService } from '../hotel-service.service';
 })
 export class HotelListComponent implements OnInit {
   @ViewChild('dt') private _table: Table;
+  title = "Sms Digital Coding Challenge"
   hotels: Hotel[];
   cols: any[];
   startDate: Date;
@@ -21,11 +22,7 @@ export class HotelListComponent implements OnInit {
   ngOnInit() {
     // this.carService.getCarsSmall().then(cars => this.cars = cars);
     this.hotelService.getHotels()
-      // .map((res: Response) => (
-      // res.json() //Convert response to JSON
-      // ))
       .subscribe(hotels => this.hotels = hotels.json()._embedded.hotel);
-    //this.hotels = JSON.parse(hotels)
     this.cols = [
       { field: 'city', header: 'City' },
       { field: 'start_date', header: 'Start Date' },
@@ -41,8 +38,6 @@ export class HotelListComponent implements OnInit {
       var s = _self.startDate[0].getTime();
       var e;
       // the to/end value might not be set
-      // use the from/start date and add 1 day
-      // or the to/end date and add 1 day
       if (_self.startDate[1]) {
         e = _self.startDate[1].getTime() + 86400000;
       } else {
@@ -57,9 +52,6 @@ export class HotelListComponent implements OnInit {
       let value = new Date(value1)
       var s = _self.endDate[0].getTime();
       var e;
-      // the to/end value might not be set
-      // use the from/start date and add 1 day
-      // or the to/end date and add 1 day
       if (_self.endDate[1]) {
         e = _self.endDate[1].getTime() + 86400000;
       } else {
@@ -94,7 +86,6 @@ export class HotelListComponent implements OnInit {
 
         }
       }
-
       return (event.order * result);
     });
   }
